@@ -21,5 +21,9 @@ return {
         },
       },
     },
+    filtered_items = {
+      visible = true, -- when true, they will just be displayed differently than normal items
+    },
+    find_by_full_path_words = false,
   },
 }
