@@ -725,7 +725,29 @@ require('lazy').setup({
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        javascript = { 'prettierd', 'prettier', stop_after_first = true },
+        -- javascript = { 'prettierd', 'prettier', stop_after_first = true },
+
+        -- ft's supported by prettierd
+        css = { 'prettierd' },
+        graphql = { 'prettierd' },
+        html = { 'prettierd' },
+        javascript = { 'prettierd' },
+        javascriptreact = { 'prettierd' },
+        json = { 'prettierd' },
+        less = { 'prettierd' },
+        markdown = { 'prettierd' },
+        scss = { 'prettierd' },
+        typescript = { 'prettierd' },
+        typescriptreact = { 'prettierd' },
+        yaml = { 'prettierd' },
+      },
+      formatters = {
+        prettierd = {
+          env = {
+            -- Only use prettier when it is installed in the project
+            PRETTIERD_LOCAL_PRETTIER_ONLY = true,
+          },
+        },
       },
     },
   },
