@@ -8,7 +8,7 @@ return {
     build = 'make tiktoken', -- Only on MacOS or Linux
     keys = {
       {
-        '<leader>cc',
+        '<leader>ac',
         ':CopilotChatToggle<CR>',
         desc = 'Copilot Chat: Toggle',
       },
