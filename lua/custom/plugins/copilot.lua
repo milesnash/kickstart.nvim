@@ -6,6 +6,13 @@ return {
       { 'nvim-lua/plenary.nvim' }, -- for curl, log and async functions
     },
     build = 'make tiktoken', -- Only on MacOS or Linux
+    keys = {
+      {
+        '<leader>cc',
+        ':CopilotChatToggle<CR>',
+        desc = 'Copilot Chat: Toggle',
+      },
+    },
     opts = {
       -- See Configuration section for options
     },
