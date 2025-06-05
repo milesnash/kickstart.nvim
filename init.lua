@@ -799,6 +799,7 @@ require('lazy').setup({
         json = { 'prettierd' },
         less = { 'prettierd' },
         markdown = { 'prettierd' },
+        mdx = { 'prettierd' },
         scss = { 'prettierd' },
         typescript = { 'prettierd' },
         typescriptreact = { 'prettierd' },
