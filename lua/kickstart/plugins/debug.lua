@@ -13,7 +13,6 @@ vim.pack.add {
   'https://github.com/mason-org/mason.nvim',
   'https://github.com/jay-babu/mason-nvim-dap.nvim',
   -- 'https://github.com/leoluz/nvim-dap-go',
-  'https://github.com/mxsdev/nvim-dap-vscode-js',
   'https://github.com/theHamsta/nvim-dap-virtual-text',
 }
 
@@ -97,13 +96,10 @@ dap.listeners.before.event_exited['dapui_config'] = dapui.close
 -- },
 -- }
 
--- Setup JS DAP config
----@diagnostic disable-next-line: missing-fields
-require('dap-vscode-js').setup {
-  debugger_path = vim.fn.stdpath 'data' .. '/mason/packages/js-debug-adapter',
-  adapters = {
-    'pwa-node',
-    'pwa-chrome',
+dap.adapters['pwa-node'] = {
+  type = 'server',
+  executable = {
+    command = vim.fn.stdpath 'data' .. '/mason/packages/js-debug-adapter/js-debug-adapter',
   },
 }
 
