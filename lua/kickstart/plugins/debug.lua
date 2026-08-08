@@ -98,6 +98,7 @@ dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
 dap.adapters['pwa-node'] = {
   type = 'server',
+  port = '${port}',
   executable = {
     command = vim.fn.stdpath 'data' .. '/mason/packages/js-debug-adapter/js-debug-adapter',
   },
