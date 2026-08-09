@@ -17,6 +17,7 @@ vim.pack.add {
   'https://github.com/yetone/avante.nvim',
 }
 
+---@diagnostic disable-next-line: missing-fields
 require('avante').setup {
   version = false,
   provider = 'copilot',
