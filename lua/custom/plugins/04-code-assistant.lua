@@ -24,13 +24,50 @@ require('avante').setup {
   providers = {
     copilot = {
       endpoint = 'https://api.githubcopilot.com',
-      model = 'gpt-4.1',
-      context_window = 64000,
+      -- For certain models, e.g. gpt-6-astra
+      use_response_api = true,
+      model = 'gpt-6-astra',
+      -- context_window = 64000,
       timeout = 30000, -- Timeout in milliseconds
-      extra_request_body = {
-        temperature = 0.1, -- Lower temperature results in less random completions
-        max_tokens = 20480,
+      disable_tools = {
+        -- 'attempt_completion',
+        -- 'bash',
+        'copy_path',
+        'create_dir',
+        'create_file',
+        'delete_path',
+        -- 'delete_tool_use_messages',
+        'edit_file',
+        'fetch',
+        -- 'get_diagnostics',
+        'git_commit',
+        'git_diff',
+        'glob',
+        -- 'grep',
+        -- 'insert',
+        -- 'ls',
+        'move_path',
+        'python',
+        'rag_search',
+        -- 'read_definitions',
+        'read_file',
+        'read_file_toplevel_symbols',
+        'read_global_file',
+        -- 'read_todos',
+        'run_python',
+        'search_keyword',
+        -- 'str_replace',
+        -- 'think',
+        -- 'undo_edit',
+        -- 'view',
+        'web_search_tavily',
+        -- 'write_to_file',
+        'write_global_file',
+        -- 'write_todos'
       },
+      -- extra_request_body = {
+      --   max_tokens = 20480,
+      -- },
     },
   },
 }

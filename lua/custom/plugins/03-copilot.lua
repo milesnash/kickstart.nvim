@@ -11,7 +11,7 @@ require('blink.cmp').add_source_provider('copilot', {
 })
 
 require('copilot').setup {
-  suggestion = { enabled = false },
+  -- suggestion = { enabled = false },
   panel = { enabled = false },
   -- logger = {
   --   file = vim.fn.stdpath 'log' .. '/copilot-lua.log',
