@@ -1,19 +1,21 @@
 vim.api.nvim_create_autocmd('PackChanged', {
   group = vim.api.nvim_create_augroup('MNTestGroup', { clear = true }),
   callback = function(ev)
-    vim.print(ev.data.spec.name)
-    if ev.data.spec.name ~= 'avante.nvim' then return end
-
-    if ev.data.kind == 'install' or ev.data.kind == 'update' then vim
-      .system({ 'make' }, {
-        cwd = ev.data.path,
-      })
-      :wait() end
+    local name, kind = ev.data.spec.name, ev.data.kind
+    vim.print(kind .. ' for ' .. name)
+    if name == 'avante.nvim' and (kind == 'install' or kind == 'update') then
+      -- Use `./build.sh` to use prebuilt libraries
+      vim.print('Building in ' .. ev.data.path)
+      local result = vim.system({ 'make' }, { cwd = ev.data.path }):wait()
+      vim.print(vim.inspect(result))
+    end
   end,
 })
 
 vim.pack.add {
   'https://github.com/MunifTanjim/nui.nvim',
+  'https://github.com/ColinKennedy/mega.logging',
+  'https://github.com/ColinKennedy/mega.cmdparse',
   'https://github.com/yetone/avante.nvim',
 }
 
